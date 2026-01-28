@@ -1,8 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 body,
 html {
     height: 100vh;
-    padding: 0;
-    margin: 0;
 }
 
 body {
@@ -47,15 +49,28 @@ main {
     justify-content: space-evenly;
     section {
         flex-grow: 1;
-    }
-    .section1 {
-        background: orange;
-    }
-
-    .section2 {
-        background: green;
-    }
-    .section3 {
-        background: blue;
+        display: flex;
+        justify-content: center;
+        fieldset {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            div {
+                flex: 1 1 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                input {
+                    width: 90%;
+                    height: 30px;
+                }
+                label {
+                    font-size: 1.2rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+        }
     }
 }
