@@ -16,13 +16,14 @@ body {
 header {
     height: 100vh;
     width: 30%;
-    background: #1f2426;
-    background: linear-gradient(
-        253deg,
-        rgba(31, 36, 38, 1) 0%,
-        rgba(0, 0, 0, 1) 50%,
-        rgba(31, 36, 38, 1) 100%
-    );
+    background:
+        linear-gradient(
+            253deg,
+            rgba(31, 36, 38, 1) 0%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(31, 36, 38, 1) 100%
+        ),
+        #1f2426;
     padding: 0;
     margin: 0;
     font-family: "Pirata One", system-ui;
@@ -50,27 +51,66 @@ main {
     section {
         flex-grow: 1;
         display: flex;
-        justify-content: center;
-        fieldset {
-            width: 80%;
+        /*justify-content: center;*/
+        justify-content: space-evenly;
+        form {
             display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            div {
-                flex: 1 1 40%;
+            justify-content: center;
+            fieldset {
+                width: 95%;
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                input {
-                    width: 90%;
-                    height: 30px;
-                }
-                label {
-                    font-size: 1.2rem;
-                    font-family: Arial, Helvetica, sans-serif;
+                flex-wrap: wrap;
+                border: none;
+                /*gap: 5px;*/
+
+                div {
+                    flex: 1 1 40%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    /*Add visible signs of validation border colors using psudoclasses*/
+                    input {
+                        width: 95%;
+                        height: 3.5rem;
+                        border-radius: 5px;
+                        border: none;
+                        align-self: center;
+                        font-size: 1.2rem;
+                        padding-left: 5px;
+                    }
+                    input[type="password"]:invalid {
+                        border: 2px solid red;
+                    }
+                    input:focus {
+                        background: #000;
+                        color: #fff;
+                    }
+
+                    label {
+                        font-size: 1.2rem;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: bold;
+                        width: inherit;
+                        align-self: flex-start;
+                        padding-left: 8px;
+                    }
+                    button {
+                        width: 50%;
+                        height: 3.5rem;
+                        align-self: center;
+                        cursor: pointer;
+                    }
                 }
             }
         }
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        padding: 2rem;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     }
 }

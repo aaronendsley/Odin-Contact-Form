@@ -25,32 +25,58 @@
                 </strong>
             </section>
             <section class="section2">
-                <fieldset>
-                    <div>
-                        <label for="first_name">First Name </label>
-                        <input type="text" name="first_name" />
-                    </div>
-                    <div>
-                        <label for="last_name"> Last Name</label>
-                        <input type="text" name="last_name" />
-                    </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="text" name="email" />
-                    </div>
-                    <div>
-                        <label for="phone_number">Phone Number</label>
-                        <input type="text" name="phone_number" />
-                    </div>
-                    <div>
-                        <label for="password">Password</label>
-                        <input type="text" name="password" />
-                    </div>
-                    <div>
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="text" name="confirm_password" />
-                    </div>
-                </fieldset>
+                <form action="/submit" method="POST">
+                    <fieldset>
+                        <div>
+                            <label for="first_name">First Name </label>
+                            <input type="text" name="first_name" required />
+                        </div>
+                        <div>
+                            <label for="last_name"> Last Name</label>
+                            <input type="text" name="last_name" required />
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" required />
+                        </div>
+                        <div>
+                            <label for="phone_number">Phone Number</label>
+                            <input
+                                type="tel"
+                                name="phone_number"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                title="Must Match 999-999-9999"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
+                                title="Must contain at least one number, one lowercase, one uppercase letter, one unique character (!@$), and be at least 8 characters long"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="confirm_password"
+                                >Confirm Password</label
+                            >
+                            <input
+                                type="password"
+                                name="confirm_password"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
+                                title="Must contain at least one number, one lowercase, one uppercase letter, one unique character (!@$), and be at least 8 characters long"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <button type="submit">Create Account</button>
+                        </div>
+                    </fieldset>
+                </form>
             </section>
         </main>
     </body>
